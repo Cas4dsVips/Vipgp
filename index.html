@@ -7,8 +7,8 @@
   <title>VIP Exclusivo +18</title>
 
   <!-- FAVICON -->
-  <link rel="icon" type="image/jpeg" href="assets/Favicon.jpg" />
-  <link rel="shortcut icon" type="image/jpeg" href="assets/Favicon.jpg" />
+  <link rel="icon" type="image/jpeg" href="./assets/Favicon.jpg" />
+  <link rel="shortcut icon" type="image/jpeg" href="./assets/Favicon.jpg" />
 
   <style>
     * {
@@ -349,6 +349,20 @@
       object-fit: cover;
       display: block;
       background: #000;
+    }
+
+
+    .video-error {
+      margin-top: 10px;
+      color: #ffb3c0;
+      font-size: 0.85rem;
+      line-height: 1.4;
+      text-align: center;
+      display: none;
+    }
+
+    .video-card.has-error .video-error {
+      display: block;
     }
 
     .video-label {
@@ -756,42 +770,42 @@
       <div class="container">
         <h2 class="section-title">Veja algumas <span>prévias</span></h2>
         <p class="section-subtitle">
-          Adicione aqui três vídeos curtos de prévia para aumentar a confiança e incentivar a entrada no VIP.
+          Confira algumas amostras rápidas do conteúdo exclusivo disponível no VIP.
         </p>
 
         <div class="video-grid">
 
           <div class="video-card">
             <div class="video-frame">
-              <!-- Troque o src abaixo pelo caminho do seu vídeo -->
-              <video controls poster="preview1.jpg">
-                <source src="assets/video1.mp4" type="video/mp4">
+              <video controls preload="metadata" playsinline data-primary="./assets/video1.mp4" data-fallback="./video1.mp4">
+                <source src="./assets/video1.mp4" type="video/mp4">
                 Seu navegador não suporta vídeo.
               </video>
             </div>
             <div class="video-label">Prévia 01</div>
+            <div class="video-error">Vídeo indisponível. Verifique se o arquivo está em <strong>assets/video1.mp4</strong>.</div>
           </div>
 
           <div class="video-card">
             <div class="video-frame">
-              <!-- Troque o src abaixo pelo caminho do seu vídeo -->
-              <video controls poster="preview2.jpg">
-                <source src="assets/video2.mp4" type="video/mp4">
+              <video controls preload="metadata" playsinline data-primary="./assets/video2.mp4" data-fallback="./video2.mp4">
+                <source src="./assets/video2.mp4" type="video/mp4">
                 Seu navegador não suporta vídeo.
               </video>
             </div>
             <div class="video-label">Prévia 02</div>
+            <div class="video-error">Vídeo indisponível. Verifique se o arquivo está em <strong>assets/video2.mp4</strong>.</div>
           </div>
 
           <div class="video-card">
             <div class="video-frame">
-              <!-- Troque o src abaixo pelo caminho do seu vídeo -->
-              <video controls poster="preview3.jpg">
-                <source src="assets/video3.mp4" type="video/mp4">
+              <video controls preload="metadata" playsinline data-primary="./assets/video3.mp4" data-fallback="./video3.mp4">
+                <source src="./assets/video3.mp4" type="video/mp4">
                 Seu navegador não suporta vídeo.
               </video>
             </div>
             <div class="video-label">Prévia 03</div>
+            <div class="video-error">Vídeo indisponível. Verifique se o arquivo está em <strong>assets/video3.mp4</strong>.</div>
           </div>
 
         </div>
@@ -918,5 +932,54 @@
     </footer>
 
   </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const videos = document.querySelectorAll("video[data-primary][data-fallback]");
+
+      videos.forEach(function (video) {
+        const source = video.querySelector("source");
+        const card = video.closest(".video-card");
+        const primary = video.dataset.primary;
+        const fallback = video.dataset.fallback;
+        let triedFallback = false;
+
+        function setSource(src) {
+          if (!source || source.getAttribute("src") === src) return;
+          source.setAttribute("src", src);
+          video.load();
+        }
+
+        video.addEventListener("error", function () {
+          if (!triedFallback) {
+            triedFallback = true;
+            setSource(fallback);
+            return;
+          }
+
+          if (card) card.classList.add("has-error");
+        }, true);
+
+        if (source) {
+          source.addEventListener("error", function () {
+            if (!triedFallback) {
+              triedFallback = true;
+              setSource(fallback);
+              return;
+            }
+
+            if (card) card.classList.add("has-error");
+          });
+        }
+
+        video.addEventListener("loadedmetadata", function () {
+          if (card) card.classList.remove("has-error");
+        });
+
+        setSource(primary);
+      });
+    });
+  </script>
+
 </body>
 </html>
