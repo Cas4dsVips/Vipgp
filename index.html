@@ -6,6 +6,10 @@
 
   <title>VIP Exclusivo +18</title>
 
+  <!-- FAVICON -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
   <style>
     * {
       margin: 0;
@@ -24,6 +28,19 @@
         linear-gradient(180deg, #070000 0%, #120000 45%, #000 100%);
       color: #fff;
       overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255, 0, 60, 0.16), transparent 28%),
+        radial-gradient(circle at 80% 35%, rgba(255, 75, 0, 0.10), transparent 30%),
+        radial-gradient(circle at 50% 90%, rgba(255, 215, 0, 0.07), transparent 26%);
+      animation: backgroundPulse 8s ease-in-out infinite alternate;
     }
 
     a {
@@ -60,6 +77,7 @@
       filter: blur(80px);
       top: -120px;
       right: -120px;
+      animation: floatGlow 6s ease-in-out infinite alternate;
     }
 
     .hero::after {
@@ -72,12 +90,14 @@
       filter: blur(80px);
       bottom: -100px;
       left: -100px;
+      animation: floatGlowReverse 7s ease-in-out infinite alternate;
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
       max-width: 760px;
+      animation: fadeUp 0.9s ease both;
     }
 
     .badge {
@@ -90,6 +110,8 @@
       font-size: 0.95rem;
       margin-bottom: 22px;
       box-shadow: 0 0 22px rgba(255, 0, 55, 0.25);
+      backdrop-filter: blur(10px);
+      animation: softPulse 2.4s ease-in-out infinite;
     }
 
     h1 {
@@ -103,6 +125,7 @@
     h1 span {
       color: #ff003c;
       text-shadow: 0 0 22px rgba(255, 0, 60, 0.8);
+      animation: neonText 2.8s ease-in-out infinite alternate;
     }
 
     .hero-text {
@@ -131,12 +154,30 @@
       letter-spacing: 0.5px;
       transition: 0.25s ease;
       cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .btn::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+      transform: translateX(-120%);
+      transition: 0.6s ease;
+      z-index: -1;
+    }
+
+    .btn:hover::before {
+      transform: translateX(120%);
     }
 
     .btn-primary {
       background: linear-gradient(135deg, #ff003c, #ff4b00);
       box-shadow: 0 0 30px rgba(255, 0, 60, 0.45);
       color: #fff;
+      animation: ctaPulse 2.2s ease-in-out infinite;
     }
 
     .btn-primary:hover {
@@ -148,11 +189,13 @@
       border: 1px solid rgba(255, 255, 255, 0.18);
       background: rgba(255, 255, 255, 0.05);
       color: #fff;
+      backdrop-filter: blur(10px);
     }
 
     .btn-secondary:hover {
       border-color: rgba(255, 0, 60, 0.7);
       background: rgba(255, 0, 60, 0.12);
+      transform: translateY(-3px);
     }
 
     .trust-row {
@@ -169,10 +212,19 @@
       border-radius: 999px;
       background: rgba(255, 255, 255, 0.06);
       border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      transition: 0.25s ease;
+    }
+
+    .trust-item:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255, 0, 60, 0.45);
+      box-shadow: 0 0 25px rgba(255, 0, 60, 0.12);
     }
 
     section {
       padding: 80px 0;
+      position: relative;
     }
 
     .section-title {
@@ -210,11 +262,24 @@
       padding: 26px 20px;
       min-height: 170px;
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      transition: 0.28s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(255, 0, 60, 0.55);
+      box-shadow: 0 22px 70px rgba(255, 0, 60, 0.15);
     }
 
     .feature-icon {
       font-size: 2rem;
       margin-bottom: 16px;
+      transition: 0.25s ease;
+    }
+
+    .feature-card:hover .feature-icon {
+      transform: scale(1.12) rotate(-4deg);
     }
 
     .feature-card h3 {
@@ -248,6 +313,14 @@
       padding: 14px;
       box-shadow: 0 0 35px rgba(255, 0, 60, 0.15);
       overflow: hidden;
+      transition: 0.28s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .video-card:hover {
+      transform: translateY(-8px) scale(1.015);
+      border-color: rgba(255, 0, 60, 0.65);
+      box-shadow: 0 0 55px rgba(255, 0, 60, 0.22);
     }
 
     .video-frame {
@@ -259,6 +332,15 @@
         #140000;
       overflow: hidden;
       position: relative;
+    }
+
+    .video-frame::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 18px;
+      pointer-events: none;
+      box-shadow: inset 0 0 35px rgba(255, 0, 60, 0.16);
     }
 
     .video-frame video {
@@ -276,6 +358,7 @@
       text-align: center;
       text-transform: uppercase;
       font-size: 0.95rem;
+      letter-spacing: 0.8px;
     }
 
     .pricing {
@@ -300,6 +383,21 @@
       box-shadow: 0 22px 70px rgba(0, 0, 0, 0.45);
       transition: 0.25s ease;
       overflow: hidden;
+      backdrop-filter: blur(10px);
+    }
+
+    .price-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255, 0, 60, 0.10), transparent 45%);
+      opacity: 0;
+      transition: 0.25s ease;
+      pointer-events: none;
+    }
+
+    .price-card:hover::before {
+      opacity: 1;
     }
 
     .price-card:hover {
@@ -311,6 +409,11 @@
     .price-card.featured {
       border-color: rgba(255, 0, 60, 0.75);
       box-shadow: 0 0 55px rgba(255, 0, 60, 0.28);
+      transform: scale(1.02);
+    }
+
+    .price-card.featured:hover {
+      transform: translateY(-6px) scale(1.03);
     }
 
     .popular {
@@ -324,6 +427,7 @@
       padding: 8px 48px;
       font-size: 0.75rem;
       text-transform: uppercase;
+      box-shadow: 0 0 25px rgba(255, 0, 60, 0.45);
     }
 
     .price-card h3 {
@@ -391,6 +495,13 @@
       background: rgba(255, 255, 255, 0.055);
       border: 1px solid rgba(255, 0, 60, 0.35);
       box-shadow: 0 0 60px rgba(255, 0, 60, 0.16);
+      backdrop-filter: blur(12px);
+      transition: 0.28s ease;
+    }
+
+    .cta-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 75px rgba(255, 0, 60, 0.24);
     }
 
     .cta-box h2 {
@@ -425,6 +536,90 @@
       font-weight: 700;
     }
 
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes floatGlow {
+      from {
+        transform: translate(0, 0) scale(1);
+      }
+
+      to {
+        transform: translate(-25px, 35px) scale(1.08);
+      }
+    }
+
+    @keyframes floatGlowReverse {
+      from {
+        transform: translate(0, 0) scale(1);
+      }
+
+      to {
+        transform: translate(30px, -25px) scale(1.1);
+      }
+    }
+
+    @keyframes softPulse {
+      0%, 100% {
+        box-shadow: 0 0 22px rgba(255, 0, 55, 0.25);
+      }
+
+      50% {
+        box-shadow: 0 0 35px rgba(255, 0, 55, 0.45);
+      }
+    }
+
+    @keyframes ctaPulse {
+      0%, 100% {
+        box-shadow: 0 0 30px rgba(255, 0, 60, 0.45);
+      }
+
+      50% {
+        box-shadow: 0 0 42px rgba(255, 0, 60, 0.68);
+      }
+    }
+
+    @keyframes neonText {
+      from {
+        text-shadow: 0 0 18px rgba(255, 0, 60, 0.65);
+      }
+
+      to {
+        text-shadow: 0 0 30px rgba(255, 0, 60, 0.95), 0 0 55px rgba(255, 75, 0, 0.35);
+      }
+    }
+
+    @keyframes backgroundPulse {
+      from {
+        opacity: 0.65;
+        transform: scale(1);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1.04);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
     @media (max-width: 960px) {
       .features-grid,
       .pricing-grid {
@@ -434,6 +629,14 @@
       .video-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 14px;
+      }
+
+      .price-card.featured {
+        transform: none;
+      }
+
+      .price-card.featured:hover {
+        transform: translateY(-6px);
       }
     }
 
