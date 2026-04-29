@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>VIP Exclusivo +18</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(255, 0, 51, 0.25), transparent 35%),
+        linear-gradient(180deg, #070000 0%, #120000 45%, #000 100%);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .page {
+      width: 100%;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 450px;
+      height: 450px;
+      border-radius: 50%;
+      background: rgba(255, 0, 55, 0.18);
+      filter: blur(80px);
+      top: -120px;
+      right: -120px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      border-radius: 50%;
+      background: rgba(255, 215, 0, 0.10);
+      filter: blur(80px);
+      bottom: -100px;
+      left: -100px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 10px 16px;
+      border: 1px solid rgba(255, 0, 55, 0.6);
+      border-radius: 999px;
+      background: rgba(255, 0, 55, 0.12);
+      color: #ffccd5;
+      font-size: 0.95rem;
+      margin-bottom: 22px;
+      box-shadow: 0 0 22px rgba(255, 0, 55, 0.25);
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 7vw, 5.8rem);
+      line-height: 0.95;
+      letter-spacing: -2px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    h1 span {
+      color: #ff003c;
+      text-shadow: 0 0 22px rgba(255, 0, 60, 0.8);
+    }
+
+    .hero-text {
+      font-size: clamp(1rem, 2.2vw, 1.35rem);
+      line-height: 1.6;
+      color: #e8d6d6;
+      max-width: 680px;
+      margin-bottom: 34px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 17px 26px;
+      border-radius: 14px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: 0.25s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #ff003c, #ff4b00);
+      box-shadow: 0 0 30px rgba(255, 0, 60, 0.45);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 0 45px rgba(255, 0, 60, 0.75);
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.05);
+      color: #fff;
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(255, 0, 60, 0.7);
+      background: rgba(255, 0, 60, 0.12);
+    }
+
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 32px;
+      color: #d9c2c2;
+      font-size: 0.95rem;
+    }
+
+    .trust-item {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 18px;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      text-transform: uppercase;
+      letter-spacing: -1px;
+    }
+
+    .section-title span {
+      color: #ff003c;
+      text-shadow: 0 0 20px rgba(255, 0, 60, 0.55);
+    }
+
+    .section-subtitle {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 45px;
+      color: #d8c6c6;
+      line-height: 1.6;
+      font-size: 1.05rem;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .feature-card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.025));
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 22px;
+      padding: 26px 20px;
+      min-height: 170px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    .feature-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .feature-card p {
+      color: #c9b7b7;
+      line-height: 1.5;
+      font-size: 0.95rem;
+    }
+
+    .preview-section {
+      background:
+        radial-gradient(circle at center, rgba(255, 0, 60, 0.12), transparent 50%),
+        #050000;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .video-card {
+      background: rgba(255, 255, 255, 0.055);
+      border: 1px solid rgba(255, 0, 60, 0.28);
+      border-radius: 24px;
+      padding: 14px;
+      box-shadow: 0 0 35px rgba(255, 0, 60, 0.15);
+      overflow: hidden;
+    }
+
+    .video-frame {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      border-radius: 18px;
+      background:
+        linear-gradient(135deg, rgba(255, 0, 60, 0.25), rgba(0, 0, 0, 0.8)),
+        #140000;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .video-frame video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      background: #000;
+    }
+
+    .video-label {
+      margin-top: 14px;
+      font-weight: 800;
+      color: #fff;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+    }
+
+    .pricing {
+      background:
+        linear-gradient(180deg, #090000, #000),
+        radial-gradient(circle at top, rgba(255, 0, 60, 0.18), transparent 40%);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .price-card {
+      position: relative;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.025));
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      border-radius: 26px;
+      padding: 30px 22px;
+      box-shadow: 0 22px 70px rgba(0, 0, 0, 0.45);
+      transition: 0.25s ease;
+      overflow: hidden;
+    }
+
+    .price-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255, 0, 60, 0.6);
+      box-shadow: 0 0 45px rgba(255, 0, 60, 0.22);
+    }
+
+    .price-card.featured {
+      border-color: rgba(255, 0, 60, 0.75);
+      box-shadow: 0 0 55px rgba(255, 0, 60, 0.28);
+    }
+
+    .popular {
+      position: absolute;
+      top: 16px;
+      right: -42px;
+      transform: rotate(35deg);
+      background: #ff003c;
+      color: #fff;
+      font-weight: 900;
+      padding: 8px 48px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+    }
+
+    .price-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 10px;
+    }
+
+    .plan-desc {
+      color: #cdbbbb;
+      font-size: 0.95rem;
+      min-height: 42px;
+      line-height: 1.4;
+      margin-bottom: 18px;
+    }
+
+    .price {
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: #ff003c;
+      margin-bottom: 18px;
+      text-shadow: 0 0 16px rgba(255, 0, 60, 0.35);
+    }
+
+    .price small {
+      font-size: 1rem;
+      color: #e7cccc;
+      font-weight: 600;
+    }
+
+    .benefits {
+      list-style: none;
+      text-align: left;
+      margin: 20px 0 26px;
+    }
+
+    .benefits li {
+      margin-bottom: 11px;
+      color: #e4d2d2;
+      font-size: 0.95rem;
+    }
+
+    .benefits li::before {
+      content: "🔥 ";
+    }
+
+    .price-card .btn {
+      width: 100%;
+      padding: 15px 18px;
+      font-size: 0.95rem;
+    }
+
+    .cta-final {
+      text-align: center;
+      padding: 90px 0;
+      background:
+        radial-gradient(circle at center, rgba(255, 0, 60, 0.18), transparent 45%),
+        linear-gradient(180deg, #000, #120000);
+    }
+
+    .cta-box {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 48px 28px;
+      border-radius: 32px;
+      background: rgba(255, 255, 255, 0.055);
+      border: 1px solid rgba(255, 0, 60, 0.35);
+      box-shadow: 0 0 60px rgba(255, 0, 60, 0.16);
+    }
+
+    .cta-box h2 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .cta-box h2 span {
+      color: #ff003c;
+    }
+
+    .cta-box p {
+      color: #ddc9c9;
+      line-height: 1.6;
+      margin-bottom: 28px;
+      font-size: 1.08rem;
+    }
+
+    .footer {
+      padding: 28px 0;
+      text-align: center;
+      color: #8f7b7b;
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      background: #000;
+    }
+
+    .age-warning {
+      color: #ffb3c0;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    @media (max-width: 960px) {
+      .features-grid,
+      .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .video-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .hero {
+        min-height: auto;
+        padding: 70px 0 50px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .features-grid,
+      .pricing-grid,
+      .video-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .video-frame {
+        aspect-ratio: 9 / 14;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .price-card {
+        padding: 28px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="badge">🔞 Conteúdo adulto exclusivo para maiores de 18 anos</div>
+
+          <h1>
+            Acesso <span>VIP</span><br>
+            direto no Telegram
+          </h1>
+
+          <p class="hero-text">
+            Entre para um grupo privado com conteúdos exclusivos +18, atualizações frequentes,
+            acesso rápido e planos acessíveis para escolher do seu jeito.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://t.me/vazdsonly_bot" target="_blank">
+              Quero entrar agora 🔥
+            </a>
+
+            <a class="btn btn-secondary" href="#planos">
+              Ver planos
+            </a>
+          </div>
+
+          <div class="trust-row">
+            <div class="trust-item">⚡ Acesso rápido</div>
+            <div class="trust-item">🔒 Privado e discreto</div>
+            <div class="trust-item">💎 Planos a partir de R$ 8,97</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFÍCIOS -->
+    <section>
+      <div class="container">
+        <h2 class="section-title">O que tem no <span>VIP?</span></h2>
+        <p class="section-subtitle">
+          Uma experiência privada, direta e feita para quem busca conteúdos adultos exclusivos,
+          com acesso simples pelo Telegram.
+        </p>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🔞</div>
+            <h3>Conteúdo +18</h3>
+            <p>Conteúdos adultos selecionados para membros do grupo VIP.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">💬</div>
+            <h3>Telegram privado</h3>
+            <p>Acesso direto pelo bot, com entrada rápida e simples.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🔥</div>
+            <h3>Atualizações frequentes</h3>
+            <p>Novidades e conteúdos adicionados para manter o grupo ativo.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">💎</div>
+            <h3>Planos flexíveis</h3>
+            <p>Escolha entre entrada avulsa, semanal, mensal ou vitalício.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRÉVIAS -->
+    <section class="preview-section" id="previas">
+      <div class="container">
+        <h2 class="section-title">Veja algumas <span>prévias</span></h2>
+        <p class="section-subtitle">
+          Adicione aqui três vídeos curtos de prévia para aumentar a confiança e incentivar a entrada no VIP.
+        </p>
+
+        <div class="video-grid">
+
+          <div class="video-card">
+            <div class="video-frame">
+              <!-- Troque o src abaixo pelo caminho do seu vídeo -->
+              <video controls poster="preview1.jpg">
+                <source src="video1.mp4" type="video/mp4">
+                Seu navegador não suporta vídeo.
+              </video>
+            </div>
+            <div class="video-label">Prévia 01</div>
+          </div>
+
+          <div class="video-card">
+            <div class="video-frame">
+              <!-- Troque o src abaixo pelo caminho do seu vídeo -->
+              <video controls poster="preview2.jpg">
+                <source src="video2.mp4" type="video/mp4">
+                Seu navegador não suporta vídeo.
+              </video>
+            </div>
+            <div class="video-label">Prévia 02</div>
+          </div>
+
+          <div class="video-card">
+            <div class="video-frame">
+              <!-- Troque o src abaixo pelo caminho do seu vídeo -->
+              <video controls poster="preview3.jpg">
+                <source src="video3.mp4" type="video/mp4">
+                Seu navegador não suporta vídeo.
+              </video>
+            </div>
+            <div class="video-label">Prévia 03</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PLANOS -->
+    <section class="pricing" id="planos">
+      <div class="container">
+        <h2 class="section-title">Escolha seu <span>plano</span></h2>
+        <p class="section-subtitle">
+          Planos acessíveis para você entrar no VIP do jeito que preferir.
+          Clique em qualquer plano e finalize pelo bot no Telegram.
+        </p>
+
+        <div class="pricing-grid">
+
+          <div class="price-card">
+            <h3>Entrada Avulsa</h3>
+            <p class="plan-desc">Ideal para quem quer conhecer o VIP pagando pouco.</p>
+
+            <div class="price">
+              R$ 8,97
+            </div>
+
+            <ul class="benefits">
+              <li>Acesso rápido</li>
+              <li>Entrada simples pelo bot</li>
+              <li>Conteúdo exclusivo +18</li>
+            </ul>
+
+            <a class="btn btn-primary" href="https://t.me/vazdsonly_bot" target="_blank">
+              Comprar avulso
+            </a>
+          </div>
+
+          <div class="price-card">
+            <h3>Plano Semanal</h3>
+            <p class="plan-desc">Perfeito para quem quer aproveitar por 7 dias.</p>
+
+            <div class="price">
+              R$ 11,97
+            </div>
+
+            <ul class="benefits">
+              <li>7 dias de acesso</li>
+              <li>Atualizações do período</li>
+              <li>Acesso privado no Telegram</li>
+            </ul>
+
+            <a class="btn btn-primary" href="https://t.me/vazdsonly_bot" target="_blank">
+              Comprar semanal
+            </a>
+          </div>
+
+          <div class="price-card">
+            <h3>Plano Mensal</h3>
+            <p class="plan-desc">A opção mais equilibrada para aproveitar por mais tempo.</p>
+
+            <div class="price">
+              R$ 15,97
+            </div>
+
+            <ul class="benefits">
+              <li>30 dias de acesso</li>
+              <li>Melhor custo por tempo</li>
+              <li>Conteúdo exclusivo e recorrente</li>
+            </ul>
+
+            <a class="btn btn-primary" href="https://t.me/vazdsonly_bot" target="_blank">
+              Comprar mensal
+            </a>
+          </div>
+
+          <div class="price-card featured">
+            <div class="popular">Mais vantajoso</div>
+
+            <h3>VIP Vitalício</h3>
+            <p class="plan-desc">Pague uma vez e mantenha seu acesso permanentemente.</p>
+
+            <div class="price">
+              R$ 18,97
+            </div>
+
+            <ul class="benefits">
+              <li>Acesso vitalício</li>
+              <li>Pagamento único</li>
+              <li>Melhor custo-benefício</li>
+            </ul>
+
+            <a class="btn btn-primary" href="https://t.me/vazdsonly_bot" target="_blank">
+              Garantir vitalício 🔥
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-final">
+      <div class="container">
+        <div class="cta-box">
+          <h2>Pronto para entrar no <span>VIP?</span></h2>
+
+          <p>
+            Clique no botão abaixo, fale com o bot no Telegram e escolha o plano que combina com você.
+            Entrada rápida, acesso privado e conteúdo exclusivo +18.
+          </p>
+
+          <a class="btn btn-primary" href="https://t.me/vazdsonly_bot" target="_blank">
+            Acessar bot agora 🚀
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="age-warning">🔞 Proibido para menores de 18 anos.</div>
+        <p>Conteúdo adulto destinado exclusivamente a maiores de idade. Acesso privado via Telegram.</p>
+      </div>
+    </footer>
+
+  </main>
+</body>
+</html>
