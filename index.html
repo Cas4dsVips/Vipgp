@@ -901,10 +901,275 @@
       .cta-box { padding: 38px 20px; }
       .cta-actions { flex-direction: column; align-items: stretch; }
     }
+  
+
+    /* ─── CRO BOOST: timer, escassez e CTA fixo ───────────────── */
+    .top-urgency {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      padding: 10px 0;
+      background: rgba(8,0,0,0.88);
+      border-bottom: 1px solid rgba(255,0,60,0.30);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+    }
+
+    .top-urgency-inner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      text-align: center;
+      font-size: 0.92rem;
+      color: #ffd6dd;
+      font-weight: 900;
+    }
+
+    .mini-countdown {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      color: #fff;
+      background: linear-gradient(135deg, rgba(255,0,60,0.38), rgba(255,75,0,0.25));
+      border: 1px solid rgba(255,0,60,0.46);
+      box-shadow: 0 0 20px rgba(255,0,60,0.18);
+      letter-spacing: 0.8px;
+    }
+
+    .hero-offer-box {
+      margin: 22px 0 26px;
+      max-width: 680px;
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(255,0,60,0.08);
+      border: 1px solid rgba(255,0,60,0.30);
+      box-shadow: 0 0 38px rgba(255,0,60,0.10);
+    }
+
+    .hero-offer-line {
+      color: #ffd6dd;
+      font-weight: 900;
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+
+    .hero-countdown {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .time-unit {
+      padding: 12px 8px;
+      border-radius: 14px;
+      text-align: center;
+      background: rgba(0,0,0,0.28);
+      border: 1px solid rgba(255,0,60,0.25);
+    }
+
+    .time-unit strong {
+      display: block;
+      font-family: var(--font-head);
+      font-size: 2.1rem;
+      line-height: 0.9;
+      color: #fff;
+    }
+
+    .time-unit span {
+      color: var(--muted);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .scarcity-box {
+      max-width: 850px;
+      margin: 0 auto 34px;
+      padding: 18px 20px;
+      border-radius: 22px;
+      background: rgba(255,0,60,0.08);
+      border: 1px solid rgba(255,0,60,0.30);
+      color: #ffd6dd;
+      text-align: center;
+      line-height: 1.55;
+      box-shadow: 0 0 38px rgba(255,0,60,0.10);
+    }
+
+    .scarcity-box strong { color: #fff; }
+
+    .video-card::before {
+      content: "PRÉVIA LIBERADA";
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      z-index: 3;
+      padding: 6px 9px;
+      border-radius: 999px;
+      background: rgba(255,0,60,0.78);
+      color: #fff;
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.7px;
+      box-shadow: 0 0 18px rgba(255,0,60,0.35);
+    }
+
+    .video-note {
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.84rem;
+      margin-top: 6px;
+      line-height: 1.45;
+    }
+
+    .preview-cta {
+      max-width: 860px;
+      margin: 42px auto 0;
+      padding: 30px 22px;
+      border-radius: var(--radius-xl);
+      background: linear-gradient(160deg, rgba(255,0,60,0.12), rgba(255,255,255,0.035));
+      border: 1px solid rgba(255,0,60,0.36);
+      text-align: center;
+      box-shadow: 0 0 60px rgba(255,0,60,0.14);
+    }
+
+    .preview-cta h3 {
+      font-family: var(--font-head);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .preview-cta h3 span { color: var(--red); }
+
+    .preview-cta p {
+      color: var(--muted);
+      max-width: 640px;
+      line-height: 1.6;
+      margin: 0 auto 22px;
+    }
+
+    .why-now-section {
+      background:
+        radial-gradient(circle at 80% 20%, rgba(255,75,0,0.07), transparent 35%),
+        linear-gradient(180deg, #080000, #050000);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+    }
+
+    .why-card {
+      background: linear-gradient(160deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 22px 16px;
+      transition: 0.28s ease;
+      text-align: center;
+      min-height: 150px;
+    }
+
+    .why-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(255,0,60,0.52);
+      box-shadow: 0 20px 60px rgba(255,0,60,0.14);
+    }
+
+    .why-card span {
+      display: block;
+      font-size: 1.85rem;
+      margin-bottom: 12px;
+    }
+
+    .why-card h3 {
+      font-size: 0.96rem;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+
+    .why-card p {
+      color: var(--muted);
+      font-size: 0.84rem;
+      line-height: 1.45;
+    }
+
+    .floating-cta {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 60;
+      padding: 12px 14px;
+      background: rgba(8,0,0,0.90);
+      border-top: 1px solid rgba(255,0,60,0.35);
+      backdrop-filter: blur(16px);
+      display: flex;
+      justify-content: center;
+      box-shadow: 0 -10px 30px rgba(0,0,0,0.40);
+    }
+
+    .floating-inner {
+      width: min(760px, 100%);
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .floating-copy {
+      color: #ffd6dd;
+      line-height: 1.25;
+      font-size: 0.88rem;
+      font-weight: 900;
+    }
+
+    .floating-copy span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .floating-cta .btn {
+      padding: 13px 18px;
+      white-space: nowrap;
+      font-size: 0.86rem;
+    }
+
+    body { padding-bottom: 86px; }
+
+    @media (max-width: 1000px) {
+      .why-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (max-width: 680px) {
+      body { padding-bottom: 92px; }
+      .top-urgency-inner { font-size: 0.8rem; gap: 8px; }
+      .why-grid { grid-template-columns: 1fr; }
+      .floating-inner { gap: 8px; }
+      .floating-copy { font-size: 0.78rem; }
+      .floating-copy span { font-size: 0.68rem; }
+      .floating-cta .btn { width: auto; padding: 12px 13px; font-size: 0.75rem; }
+    }
+
   </style>
 </head>
 
 <body>
+  <div class="top-urgency">
+    <div class="container">
+      <div class="top-urgency-inner">
+        <span>🔥 Oferta de hoje: vitalício promocional por R$ 18,97</span>
+        <span class="mini-countdown">Termina em <strong id="miniTimer">--:--:--</strong></span>
+      </div>
+    </div>
+  </div>
   <main>
 
     <!-- ════════════════════════════════════════
@@ -915,41 +1180,48 @@
         <div class="hero-content">
 
           <div class="hero-badge">
-            🔞 Grupo privado +18 &nbsp;·&nbsp; Hotwife &nbsp;·&nbsp; Cuckold &nbsp;·&nbsp; Casais reais
+            🔞 Apenas 3 prévias liberadas &nbsp;·&nbsp; restante bloqueado no VIP
           </div>
 
           <h1>
-            VIP <span class="accent">Hotwife</span><br>
-            &amp; Cuckold
-            <span class="small-line">Conteúdo +18 privado</span>
+            Veja as <span class="accent">prévias</span><br>
+            desbloqueie o VIP
+            <span class="small-line">Hotwife • Cuckold • Casais +18</span>
           </h1>
 
           <p class="hero-tagline">
-            Entre agora para o grupo VIP no Telegram. Conteúdo adulto de casais,
-            hotwife e cuckold. <strong>Acesso automático via bot, pagamento único — sem assinatura.</strong>
-            A partir de R$&nbsp;8,97.
+            Você está vendo só uma amostra. O conteúdo completo fica dentro do grupo VIP privado no Telegram.
+            <strong>Pagamento único, entrada automática pelo bot e promoção ativa até 23:59.</strong>
           </p>
 
+          <div class="hero-offer-box">
+            <div class="hero-offer-line">
+              🔥 Hoje: VIP Vitalício de <span style="text-decoration:line-through;color:#9b8080">R$ 29,90</span> por <strong>R$ 18,97</strong>. Depois que o contador zerar, a oferta pode sair do ar.
+            </div>
+            <div class="hero-countdown" aria-label="Contador regressivo da promoção">
+              <div class="time-unit"><strong id="hours">--</strong><span>horas</span></div>
+              <div class="time-unit"><strong id="minutes">--</strong><span>min</span></div>
+              <div class="time-unit"><strong id="seconds">--</strong><span>seg</span></div>
+            </div>
+          </div>
+
           <div class="niche-tags">
-            <span class="niche-tag">🔥 Hotwife</span>
-            <span class="niche-tag">😈 Cuckold</span>
-            <span class="niche-tag">🔞 Casais +18</span>
-            <span class="niche-tag">💋 Conteúdo privado</span>
-            <span class="niche-tag">⚡ Acesso automático</span>
+            <span class="niche-tag">🔥 3 prévias públicas</span>
+            <span class="niche-tag">😈 Conteúdo completo no VIP</span>
+            <span class="niche-tag">⚡ Liberação automática</span>
+            <span class="niche-tag">🔒 Privado e discreto</span>
           </div>
 
           <div class="hero-actions">
             <a class="btn btn-primary"
-               href="https://t.me/vazdsonly_bot"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="Entrar no grupo VIP pelo bot do Telegram">
-              Quero entrar agora →
+               href="#previas"
+               aria-label="Ver as prévias disponíveis na página">
+              Assistir prévias 🔥
             </a>
             <a class="btn btn-secondary"
                href="#planos"
                aria-label="Ver os planos disponíveis">
-              Ver planos
+Desbloquear VIP
             </a>
           </div>
 
@@ -961,6 +1233,90 @@
             <div class="trust-pill"><span class="dot"></span> A partir de R$ 8,97</div>
           </div>
 
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+    <!-- ════════════════════════════════════════
+         PRÉVIAS
+    ════════════════════════════════════════ -->
+    <section class="preview-section" id="previas">
+      <div class="container">
+        <div style="text-align:center" class="reveal">
+          <div class="section-label">Base de prévias</div>
+          <h2 class="section-title">3 prévias <span>liberadas</span></h2>
+          <p class="section-subtitle">
+            Essas são apenas amostras para você sentir a pegada do VIP. O restante do conteúdo fica bloqueado
+            dentro do grupo privado.
+          </p>
+        </div>
+
+        <div class="scarcity-box reveal">
+          🔥 <strong>Escassez real da página:</strong> só existem 3 prévias disponíveis aqui.
+          Para ver o conteúdo completo, é preciso desbloquear o acesso pelo bot no Telegram.
+        </div>
+
+        <div class="video-grid">
+          <div class="video-card reveal reveal-delay-1">
+            <div class="video-frame">
+              <video controls preload="metadata" playsinline
+                     data-primary="./assets/video1.mp4"
+                     data-fallback="./video1.mp4"
+                     aria-label="Prévia de conteúdo hotwife +18">
+                <source src="./assets/video1.mp4" type="video/mp4">
+                Seu navegador não suporta vídeo HTML5.
+              </video>
+            </div>
+            <div class="video-label">Hotwife</div>
+            <div class="video-note">Prévia curta • conteúdo completo no VIP</div>
+            <div class="video-error">Vídeo indisponível. Verifique o arquivo em <strong>assets/video1.mp4</strong>.</div>
+          </div>
+
+          <div class="video-card reveal reveal-delay-2">
+            <div class="video-frame">
+              <video controls preload="metadata" playsinline
+                     data-primary="./assets/video2.mp4"
+                     data-fallback="./video2.mp4"
+                     aria-label="Prévia de conteúdo cuckold +18">
+                <source src="./assets/video2.mp4" type="video/mp4">
+                Seu navegador não suporta vídeo HTML5.
+              </video>
+            </div>
+            <div class="video-label">Cuckold</div>
+            <div class="video-note">Prévia curta • conteúdo completo no VIP</div>
+            <div class="video-error">Vídeo indisponível. Verifique o arquivo em <strong>assets/video2.mp4</strong>.</div>
+          </div>
+
+          <div class="video-card reveal reveal-delay-3">
+            <div class="video-frame">
+              <video controls preload="metadata" playsinline
+                     data-primary="./assets/video3.mp4"
+                     data-fallback="./video3.mp4"
+                     aria-label="Prévia de conteúdo de casais +18">
+                <source src="./assets/video3.mp4" type="video/mp4">
+                Seu navegador não suporta vídeo HTML5.
+              </video>
+            </div>
+            <div class="video-label">Casais +18</div>
+            <div class="video-note">Prévia curta • conteúdo completo no VIP</div>
+            <div class="video-error">Vídeo indisponível. Verifique o arquivo em <strong>assets/video3.mp4</strong>.</div>
+          </div>
+        </div>
+
+        <div class="preview-cta reveal">
+          <h3>Gostou das prévias? <span>Desbloqueie o resto.</span></h3>
+          <p>
+            As prévias mostram só uma parte. O VIP libera o conteúdo completo, com acesso privado no Telegram
+            e entrada automática após o pagamento.
+          </p>
+          <a class="btn btn-primary"
+             href="https://t.me/vazdsonly_bot"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Desbloquear o conteúdo completo no Telegram">
+            Desbloquear conteúdo completo 🔥
+          </a>
         </div>
       </div>
     </section>
@@ -1064,80 +1420,6 @@
 
     <div class="divider"></div>
 
-    <!-- ════════════════════════════════════════
-         PRÉVIAS
-    ════════════════════════════════════════ -->
-    <section class="preview-section" id="previas">
-      <div class="container">
-        <div style="text-align:center" class="reveal">
-          <div class="section-label">Amostra do conteúdo</div>
-          <h2 class="section-title">Prévias <span>picantes</span></h2>
-          <p class="section-subtitle">
-            Uma pequena amostra do tipo de conteúdo que espera por você no VIP:
-            casais, hotwife, cuckold e aquele clima provocante para quem sabe o que quer.
-          </p>
-        </div>
-
-        <div class="video-grid">
-          <div class="video-card reveal reveal-delay-1">
-            <div class="video-frame">
-              <video controls preload="metadata" playsinline
-                     data-primary="./assets/video1.mp4"
-                     data-fallback="./video1.mp4"
-                     aria-label="Prévia de conteúdo hotwife +18">
-                <source src="./assets/video1.mp4" type="video/mp4">
-                Seu navegador não suporta vídeo HTML5.
-              </video>
-            </div>
-            <div class="video-label">Hotwife</div>
-            <div class="video-error">Vídeo indisponível. Verifique o arquivo em <strong>assets/video1.mp4</strong>.</div>
-          </div>
-
-          <div class="video-card reveal reveal-delay-2">
-            <div class="video-frame">
-              <video controls preload="metadata" playsinline
-                     data-primary="./assets/video2.mp4"
-                     data-fallback="./video2.mp4"
-                     aria-label="Prévia de conteúdo cuckold +18">
-                <source src="./assets/video2.mp4" type="video/mp4">
-                Seu navegador não suporta vídeo HTML5.
-              </video>
-            </div>
-            <div class="video-label">Cuckold</div>
-            <div class="video-error">Vídeo indisponível. Verifique o arquivo em <strong>assets/video2.mp4</strong>.</div>
-          </div>
-
-          <div class="video-card reveal reveal-delay-3">
-            <div class="video-frame">
-              <video controls preload="metadata" playsinline
-                     data-primary="./assets/video3.mp4"
-                     data-fallback="./video3.mp4"
-                     aria-label="Prévia de conteúdo de casais +18">
-                <source src="./assets/video3.mp4" type="video/mp4">
-                Seu navegador não suporta vídeo HTML5.
-              </video>
-            </div>
-            <div class="video-label">Casais +18</div>
-            <div class="video-error">Vídeo indisponível. Verifique o arquivo em <strong>assets/video3.mp4</strong>.</div>
-          </div>
-        </div>
-
-        <div style="text-align:center; margin-top:44px" class="reveal">
-          <p style="color:var(--muted); margin-bottom:20px; font-size:0.96rem;">
-            Quer ver muito mais? O VIP atualiza com frequência.
-          </p>
-          <a class="btn btn-primary"
-             href="https://t.me/vazdsonly_bot"
-             target="_blank"
-             rel="noopener noreferrer"
-             aria-label="Entrar no VIP para ver todo o conteúdo">
-            Ver tudo no VIP 🔥
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <div class="divider"></div>
 
     <!-- ════════════════════════════════════════
          PLANOS
@@ -1217,23 +1499,24 @@
 
           <!-- Vitalício — featured -->
           <div class="price-card featured reveal reveal-delay-4">
-            <div class="popular-ribbon">Mais vantajoso</div>
-            <div class="economy-tag">⭐ Melhor custo-benefício</div>
+            <div class="popular-ribbon">Oferta de hoje</div>
+            <div class="economy-tag">⭐ Mais vendido</div>
             <div class="plan-name">VIP Vitalício</div>
             <p class="plan-desc">Pague uma única vez e nunca mais se preocupe com renovação.</p>
             <div class="price-value">R$&nbsp;18,97</div>
-            <p class="price-sub">Acesso permanente &nbsp;·&nbsp; pagamento único</p>
+            <p class="price-sub"><span style="text-decoration:line-through;color:#8f7777">R$ 29,90</span> • hoje por R$ 18,97</p>
             <ul class="benefits">
               <li>Acesso vitalício garantido</li>
               <li>Paga uma vez, aproveita sempre</li>
               <li>Todo o conteúdo presente e futuro</li>
+              <li>Sem cobrança recorrente</li>
             </ul>
             <a class="btn btn-primary"
                href="https://t.me/vazdsonly_bot"
                target="_blank"
                rel="noopener noreferrer"
                aria-label="Garantir acesso vitalício pelo bot do Telegram">
-              Garantir meu vitalício 🔥
+              Garantir vitalício agora 🔥
             </a>
           </div>
 
@@ -1243,6 +1526,51 @@
 
     <div class="divider"></div>
 
+
+    <!-- ════════════════════════════════════════
+         POR QUE ENTRAR AGORA
+    ════════════════════════════════════════ -->
+    <section class="why-now-section">
+      <div class="container">
+        <div style="text-align:center" class="reveal">
+          <div class="section-label">Por que entrar agora?</div>
+          <h2 class="section-title">A página mostra pouco. <span>O VIP libera tudo.</span></h2>
+          <p class="section-subtitle">
+            Se as prévias já chamaram sua atenção, o acesso completo está a um clique.
+          </p>
+        </div>
+
+        <div class="why-grid">
+          <div class="why-card reveal reveal-delay-1">
+            <span>⏰</span>
+            <h3>Promoção até 23:59</h3>
+            <p>O valor promocional do vitalício fica ativo enquanto o contador estiver rodando.</p>
+          </div>
+          <div class="why-card reveal reveal-delay-2">
+            <span>🔒</span>
+            <h3>Acesso discreto</h3>
+            <p>Entrada privada pelo Telegram, sem exposição e sem enrolação.</p>
+          </div>
+          <div class="why-card reveal reveal-delay-3">
+            <span>⚡</span>
+            <h3>Liberação automática</h3>
+            <p>Pagou, o bot confirma e libera seu acesso no grupo automaticamente.</p>
+          </div>
+          <div class="why-card reveal reveal-delay-4">
+            <span>💎</span>
+            <h3>Vitalício vantajoso</h3>
+            <p>Por pouca diferença do mensal, você garante acesso permanente.</p>
+          </div>
+          <div class="why-card reveal reveal-delay-4">
+            <span>🔥</span>
+            <h3>Conteúdo completo</h3>
+            <p>As 3 prévias são só amostras. O restante fica dentro do VIP.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
     <!-- ════════════════════════════════════════
          FAQ
     ════════════════════════════════════════ -->
@@ -1257,6 +1585,17 @@
         </div>
 
         <div class="faq-list reveal">
+
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Essas 3 prévias são todo o conteúdo?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer" aria-hidden="true">
+              <p><strong>Não.</strong> As prévias da página são só amostras. O conteúdo completo fica bloqueado dentro do grupo VIP no Telegram.</p>
+            </div>
+          </div>
 
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false">
@@ -1344,11 +1683,10 @@
     <section class="cta-final">
       <div class="container">
         <div class="cta-box reveal">
-          <h2>Pronto para liberar seu <span>acesso?</span></h2>
+          <h2>As prévias acabaram. <span>O resto está no VIP.</span></h2>
           <p>
-            Escolha seu plano, pague pelo bot e entre direto no VIP.
-            Conteúdo adulto +18 de casais, hotwife e cuckold. Privado, discreto e automático.
-            <strong>Sem assinatura, sem complicação.</strong>
+            Escolha seu plano, pague pelo bot e entre direto no grupo privado.
+            A promoção do vitalício fica ativa até 23:59. <strong>Pagamento único, sem assinatura e sem complicação.</strong>
           </p>
           <div class="cta-actions">
             <a class="btn btn-primary"
@@ -1356,12 +1694,12 @@
                target="_blank"
                rel="noopener noreferrer"
                aria-label="Acessar o grupo VIP pelo bot do Telegram agora">
-              Acessar o VIP agora 🚀
+              Desbloquear VIP agora 🚀
             </a>
             <a class="btn btn-secondary"
-               href="#planos"
-               aria-label="Ver os planos disponíveis">
-              Ver planos
+               href="#previas"
+               aria-label="Ver as prévias novamente">
+              Rever prévias
             </a>
           </div>
           <div class="cta-assurance">
@@ -1389,10 +1727,65 @@
 
   </main>
 
+
+  <div class="floating-cta" role="region" aria-label="Botão fixo para entrar no VIP">
+    <div class="floating-inner">
+      <div class="floating-copy">
+        Vitalício por R$ 18,97
+        <span>Promoção até <strong id="floatingTimer">--:--:--</strong></span>
+      </div>
+      <a class="btn btn-primary"
+         href="https://t.me/vazdsonly_bot"
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="Desbloquear VIP pelo Telegram">
+        Desbloquear 🔥
+      </a>
+    </div>
+  </div>
+
   <!-- ════════════════════════════════════════
        SCRIPTS
   ════════════════════════════════════════ -->
   <script>
+
+    /* ── Countdown da promoção até 23:59 ── */
+    (function () {
+      function pad(n) { return String(n).padStart(2, '0'); }
+
+      function updateCountdown() {
+        var now = new Date();
+        var end = new Date();
+        end.setHours(23, 59, 59, 999);
+
+        if (now > end) {
+          end.setDate(end.getDate() + 1);
+          end.setHours(23, 59, 59, 999);
+        }
+
+        var diff = end - now;
+        var hours = Math.floor(diff / (1000 * 60 * 60));
+        var minutes = Math.floor((diff / (1000 * 60)) % 60);
+        var seconds = Math.floor((diff / 1000) % 60);
+        var full = pad(hours) + ':' + pad(minutes) + ':' + pad(seconds);
+
+        var h = document.getElementById('hours');
+        var m = document.getElementById('minutes');
+        var s = document.getElementById('seconds');
+        var mini = document.getElementById('miniTimer');
+        var floating = document.getElementById('floatingTimer');
+
+        if (h) h.textContent = pad(hours);
+        if (m) m.textContent = pad(minutes);
+        if (s) s.textContent = pad(seconds);
+        if (mini) mini.textContent = full;
+        if (floating) floating.textContent = full;
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    })();
+
     /* ── Scroll Reveal ── */
     (function () {
       var els = document.querySelectorAll('.reveal');
